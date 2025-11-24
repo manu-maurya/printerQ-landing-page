@@ -13,7 +13,7 @@ const GlassNavbar = () => {
   }, []);
 
   // DIMENSION CONFIGURATION
-  const navHeight = 64;
+  const navHeight = 60;
   const btnWidth = 140;
   const gap = 12;
 
@@ -71,7 +71,7 @@ const GlassNavbar = () => {
 
       {/* --- 2. SEPARATE GLASS BUTTON (Accented Style) --- */}
       {/* UPDATED: Changed shadow to primary color for a blue glow */}
-      <div className="pointer-events-auto rounded-full shadow-2xl shadow-primary/40 transition-transform hover:scale-105 active:scale-95 cursor-pointer">
+      <div className="pointer-events-auto rounded-full shadow-2xl shadow-primary/40 transition-transform hover:scale-105 active:scale-90 cursor-pointer">
         <GlassSurface
           width={btnWidth}
           height={navHeight}
@@ -85,14 +85,14 @@ const GlassNavbar = () => {
           opacity={1}
           mixBlendMode="normal"
           // UPDATED: Changed border to use your primary brand color (at 50% opacity)
-          className="border-2 border-s/50 rounded-full"
+          className="border border-p rounded-full"
         >
           <button
             // Added text-primary-light for a subtle blue tint to the text too
             className="w-full h-full flex items-center justify-center text-p-cream font-bold text-xs tracking-widest uppercase"
             style={{ width: btnWidth, height: navHeight }}
           >
-            Join Waitlist
+            JOIN WAITLIST
           </button>
         </GlassSurface>
       </div>
