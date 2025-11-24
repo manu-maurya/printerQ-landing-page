@@ -1,63 +1,99 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import GlassSurface from '../../components/GlassSurface'; 
-import { Home, FileText, Atom } from 'lucide-react'; // Assuming you use Lucide or similar icons
+"use client";
+import React, { useState, useEffect } from "react";
+import GlassSurface from "../../components/GlassSurface";
 
 const GlassNavbar = () => {
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
+    setWindowWidth(window.innerWidth);
     const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // 1. Slimmer Height (approx 64px based on image)
+  // DIMENSION CONFIGURATION
   const navHeight = 64;
-  
-  // 2. Floating width (leaves space on sides)
-  const marginX = 100; // Wider margins to make it look like a pill in the center
-  const finalWidth = Math.min(windowWidth - 32, 900); // Max width constraint creates the 'compact' look
+  const btnWidth = 140;
+  const gap = 12;
+
+  const maxNavWidth = 800;
+  const availableWidthForNav = windowWidth - btnWidth - gap - 48;
+
+  const finalNavWidth =
+    windowWidth > 0
+      ? Math.min(Math.max(availableWidthForNav, 200), maxNavWidth)
+      : maxNavWidth;
+
+  if (windowWidth === 0) return null;
 
   return (
-    <div className="fixed top-6 left-0 right-0 z-50 flex justify-center pointer-events-none">
-      {/* pointer-events-none on wrapper allows clicking things next to the nav, 
-          we re-enable pointer-events-auto on the nav itself. */}
-      
-      <div className="pointer-events-auto rounded-full shadow-2xl shadow-black/50">
+    <div className="fixed top-6 left-0 right-0 z-50 flex justify-center items-center pointer-events-none gap-3 px-6">
+      {/* --- 1. MAIN NAVBAR PILL (Neutral Style) --- */}
+      <div className="pointer-events-auto rounded-full shadow-2xl shadow-black/50 transition-all duration-300">
         <GlassSurface
-          width={finalWidth}
+          width={finalNavWidth}
           height={navHeight}
-          borderRadius={50} 
-          
-          // DARK GLASS SETTINGS
+          borderRadius={50}
           displace={10}
           distortionScale={-50}
           redOffset={1}
           greenOffset={1}
           blueOffset={5}
-          brightness={0.3} 
-          opacity={1}      
+          brightness={0.3}
+          opacity={1}
           mixBlendMode="normal"
-          
-          // The thin white border is CRITICAL for this look
-          className="border border-white/10 rounded-full" 
+          // Neutral white border for the main bar
+          className="border border-white/10 rounded-full"
         >
-          <div 
+          <div
             className="flex items-center justify-between w-full h-full px-8 text-white"
-            style={{ width: finalWidth, height: navHeight }}
+            style={{ width: finalNavWidth, height: navHeight }}
           >
-              {/* Left: Icon (React Logo style) */}
-              <div className="flex items-center gap-2 opacity-90 hover:opacity-100 transition-opacity cursor-pointer">
-                  <Atom size={24} className="text-white" /> {/* Or your logo */}
-              </div>
+            <div className="flex items-center gap-2 cursor-pointer select-none">
+              {/* Added text-primary to the dot for branding */}
+              <p className="font-extrabold text-lg tracking-tight">
+                printerQ<span className="text-primary">.</span>
+              </p>
+            </div>
 
-              {/* Right: Links */}
-              <div className="flex items-center gap-8 font-medium text-sm tracking-wide">
-                  <a href="#home" className="hover:text-gray-300 transition-colors">Home</a>
-                  <a href="#docs" className="hover:text-gray-300 transition-colors">Docs</a>
-              </div>
+            <div className="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide text-white/80">
+              <a href="#home" className="hover:text-white transition-colors">
+                Home
+              </a>
+              <a href="#docs" className="hover:text-white transition-colors">
+                Docs
+              </a>
+            </div>
           </div>
+        </GlassSurface>
+      </div>
+
+      {/* --- 2. SEPARATE GLASS BUTTON (Accented Style) --- */}
+      {/* UPDATED: Changed shadow to primary color for a blue glow */}
+      <div className="pointer-events-auto rounded-full shadow-2xl shadow-primary/40 transition-transform hover:scale-105 active:scale-95 cursor-pointer">
+        <GlassSurface
+          width={btnWidth}
+          height={navHeight}
+          borderRadius={50}
+          displace={10}
+          distortionScale={-50}
+          redOffset={1}
+          greenOffset={1}
+          blueOffset={5}
+          brightness={0.3}
+          opacity={1}
+          mixBlendMode="normal"
+          // UPDATED: Changed border to use your primary brand color (at 50% opacity)
+          className="border-2 border-s/50 rounded-full"
+        >
+          <button
+            // Added text-primary-light for a subtle blue tint to the text too
+            className="w-full h-full flex items-center justify-center text-p-cream font-bold text-xs tracking-widest uppercase"
+            style={{ width: btnWidth, height: navHeight }}
+          >
+            Join Waitlist
+          </button>
         </GlassSurface>
       </div>
     </div>
