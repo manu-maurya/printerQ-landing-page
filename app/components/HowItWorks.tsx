@@ -5,8 +5,8 @@ const HowItWorks = () => {
     <div className="relative flex items-center justify-center bg-p-cream h-screen">
       <section className="z-10 text-center px-4">
         <div className="max-w-3xl mx-auto">
-            <h1 className="lg:text-8xl md:text-7xl text-6xl font-extrabold text-p-cream mb-4">
-                printerQ
+            <h1 className="lg:text-7xl md:text-6xl text-5xl font-extrabold bg-linear-to-br from-p to-p-dark bg-clip-text text-transparent  mb-4">
+                How printerQ Works
             </h1>
             <h1 className="lg:text-6xl md:text-5xl text-4xl font-extrabold bg-linear-to-r from-p-cream to-text-secondary-light bg-clip-text text-transparent mb-4">
                 Printer on Wheels
