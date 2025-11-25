@@ -89,10 +89,10 @@ const GlassNavbar = () => {
         >
           <button
             // Added text-primary-light for a subtle blue tint to the text too
-            className="w-full h-full flex items-center justify-center text-p-cream font-bold text-xs tracking-widest uppercase"
+            className="w-full h-full flex items-center justify-center text-p-cream font-bold text-md tracking-widest"
             style={{ width: btnWidth, height: navHeight }}
           >
-            JOIN WAITLIST
+            Join Waitlist
           </button>
         </GlassSurface>
       </div>
