@@ -81,6 +81,7 @@ const GlassNavbar = () => {
             style={{ width: finalNavWidth, height: navHeight }}
           >
             {/* LOGO */}
+            <a href="#">
             <div className="flex items-center gap-2 cursor-pointer select-none">
               <p
                 className={`font-extrabold text-lg tracking-tight transition-colors duration-500 ${
@@ -90,6 +91,7 @@ const GlassNavbar = () => {
                 printerQ<span className="text-primary">.</span>
               </p>
             </div>
+            </a>
 
             {/* LINKS */}
             <div
@@ -128,7 +130,7 @@ const GlassNavbar = () => {
 
       {/* --- 2. DYNAMIC THEMED BUTTON --- */}
       <div
-        className={`pointer-events-auto rounded-full shadow-2xl transition-all duration-700 ease-in-out cursor-pointer overflow-hidden
+        className={`pointer-events-auto rounded-full shadow-2xl transition-all duration-500 ease-in-out cursor-pointer overflow-hidden
           ${
             showNavButton
               ? "opacity-100 translate-x-0 w-[140px]"

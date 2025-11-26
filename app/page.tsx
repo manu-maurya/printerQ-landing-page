@@ -9,14 +9,15 @@ export default function Home() {
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
-  });
+    window.scrollTo({top:0,left:0,behavior:'instant'});
+  }, []);
   return (
     <main className="w-full relative">
       <GlassNavbar />
-      <section id=".">
+      <section id="">
         <Hero />
       </section>
-      <section id="#details">
+      <section id="details">
         <HowItWorks />
       </section>
     </main>
