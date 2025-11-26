@@ -33,22 +33,22 @@ const Features = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
           
           {/* Card 1: SPEED (Span 2 cols) */}
-          <div className="md:col-span-2 group relative overflow-hidden bg-white rounded-4xl p-10 shadow-sm border border-black/5 hover:shadow-xl hover:shadow-p-dark/5 transition-all duration-500">
+          <div className="md:col-span-2 group relative overflow-hidden bg-p-grey rounded-4xl p-10 shadow-sm border border-black/5 hover:shadow-xl hover:shadow-p-cream/5 transition-all duration-500">
             <div className="relative z-10 h-full flex flex-col justify-between">
                 <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-4">
                     <Zap size={24} strokeWidth={2.5} />
                 </div>
                 <div>
-                    <h4 className="text-2xl font-bold text-p-grey-dark mb-2">Lightning Fast Delivery</h4>
-                    <p className="text-gray-500">Our decentralized fleet ensures a printer is never more than 10 minutes away from your location.</p>
+                    <h4 className="text-2xl font-bold text-p-cream mb-2">Lightning Fast Delivery</h4>
+                    <p className="text-p-cream/50">Our decentralized fleet ensures a printer is never more than 10 minutes away from your location.</p>
                 </div>
             </div>
             {/* Hover Decoration */}
-            <div className="absolute top-0 right-0 w-64 h-full bg-linear-to-l from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute top-0 right-0 w-64 h-full bg-linear-to-l from-p-grey-light to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
 
           {/* Card 2: SECURITY (Span 1 col) */}
-          <div className="md:col-span-1 group relative overflow-hidden bg-p-grey-dark rounded-4xl p-10 shadow-sm hover:-translate-y-2 transition-all duration-500">
+          <div className="md:col-span-1 group relative overflow-hidden bg-p-grey-dark rounded-4xl p-10 shadow-sm hover:-translate-y-2 transition-all duration-500" data-theme="dark">
             <div className="relative z-10 h-full flex flex-col justify-between">
                 <div className="w-12 h-12 bg-white/10 text-white rounded-2xl flex items-center justify-center mb-4">
                     <ShieldCheck size={24} strokeWidth={2.5} />
@@ -74,7 +74,7 @@ const Features = () => {
           </div>
 
           {/* Card 4: MOBILE APP (Span 2 cols) */}
-          <div className="md:col-span-2 group relative overflow-hidden bg-white rounded-[2rem] p-10 shadow-sm border border-black/5 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500">
+          <div className="md:col-span-2 group relative overflow-hidden bg-white rounded-4xl p-10 shadow-sm border border-black/5 hover:shadow-xl hover:shadow-primary/5 transition-all duration-500">
              <div className="relative z-10 h-full flex flex-col justify-between">
                 <div className="w-12 h-12 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-4">
                     <Smartphone size={24} strokeWidth={2.5} />
