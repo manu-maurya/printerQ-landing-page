@@ -108,6 +108,14 @@ const GlassNavbar = () => {
                 Details
               </a>
               <a
+                href="#features "
+                className={`hover:opacity-100 transition-opacity ${
+                  isLightMode ? "hover:text-p-grey-dark" : "hover:text-p-cream"
+                }`}
+              >
+                Features
+              </a>
+              <a
                 href="#printer"
                 className={`hover:opacity-100 transition-opacity ${
                   isLightMode ? "hover:text-p-grey-dark" : "hover:text-p-cream"

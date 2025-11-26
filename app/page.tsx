@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import GlassNavbar from "./components/NavBar"; // or wherever it is
 import HowItWorks from "./components/HowItWorks";
 import { useEffect } from "react";
+import Features from "./components/Features";
 
 export default function Home() {
   useEffect(() => {
@@ -19,6 +20,9 @@ export default function Home() {
       </section>
       <section id="details">
         <HowItWorks />
+      </section>
+      <section id="features">
+        <Features  />
       </section>
     </main>
   );
