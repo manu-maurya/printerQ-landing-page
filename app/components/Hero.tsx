@@ -1,11 +1,13 @@
 "use client";
 
 import ComingSoonBadge from "./ComingSoonBadge";
+import HeroFloatingElements from "./HeroFloatingElements";
 
 const Hero = () => {
   return (
     // 1. 'relative' allows us to position children absolutely inside this container
     <div className="relative flex items-center justify-center bg-p-grey-dark h-screen w-full">
+      <HeroFloatingElements/>
       {/* Middle Content */}
       <section className="z-10 text-center px-4">
         <div className="max-w-3xl mx-auto">

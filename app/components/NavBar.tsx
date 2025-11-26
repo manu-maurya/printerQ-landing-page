@@ -4,22 +4,48 @@ import GlassSurface from "../../components/GlassSurface";
 
 const GlassNavbar = () => {
   const [windowWidth, setWindowWidth] = useState(0);
+  const [showNavButton, setShowNavButton] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(false);
 
   useEffect(() => {
     setWindowWidth(window.innerWidth);
     const handleResize = () => setWindowWidth(window.innerWidth);
+
+    const handleScroll = () => {
+      const heroHeight = window.innerHeight;
+
+      // 1. VISIBILITY LOGIC (Button appears after 80% scroll)
+      if (window.scrollY > heroHeight * 0.8) {
+        setShowNavButton(true);
+      } else {
+        setShowNavButton(false);
+      }
+
+      // 2. THEME LOGIC (Switches to Light Mode after 90% scroll)
+      if (window.scrollY > heroHeight * 0.9) {
+        setIsLightMode(true);
+      } else {
+        setIsLightMode(false);
+      }
+    };
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
+    
+    handleScroll();
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  // DIMENSION CONFIGURATION
+  // Dimensions
   const navHeight = 60;
   const btnWidth = 140;
   const gap = 12;
-
+  const widthToSubtract = showNavButton ? btnWidth + gap + 48 : 48;
   const maxNavWidth = 800;
-  const availableWidthForNav = windowWidth - btnWidth - gap - 48;
-
+  const availableWidthForNav = windowWidth - widthToSubtract;
   const finalNavWidth =
     windowWidth > 0
       ? Math.min(Math.max(availableWidthForNav, 200), maxNavWidth)
@@ -28,8 +54,8 @@ const GlassNavbar = () => {
   if (windowWidth === 0) return null;
 
   return (
-    <div className="fixed top-6 left-0 right-0 z-50 flex justify-center items-center pointer-events-none gap-3 px-6">
-      {/* --- 1. MAIN NAVBAR PILL (Neutral Style) --- */}
+    <div className="fixed top-6 left-0 right-0 z-50 flex justify-center items-center pointer-events-none gap-3 px-6 transition-all duration-500">
+      {/* --- 1. MAIN NAVBAR --- */}
       <div className="pointer-events-auto rounded-full shadow-2xl shadow-black/50 transition-all duration-300">
         <GlassSurface
           width={finalNavWidth}
@@ -40,38 +66,89 @@ const GlassNavbar = () => {
           redOffset={1}
           greenOffset={1}
           blueOffset={5}
-          brightness={0.3}
+          // Adjust brightness slightly based on mode
+          brightness={isLightMode ? 0.4 : 0.3}
           opacity={1}
           mixBlendMode="normal"
-          // Neutral white border for the main bar
-          className="border border-white/10 rounded-full"
+          className={`${
+            isLightMode
+              ? "border border-p-grey-dark/10 rounded-full"
+              : "border border-p-cream/10 rounded-full"
+          }`}
         >
           <div
-            className="flex items-center justify-between w-full h-full px-8 text-white"
+            className="flex items-center justify-between w-full h-full px-8"
             style={{ width: finalNavWidth, height: navHeight }}
           >
+            {/* LOGO */}
+            <a href="#">
             <div className="flex items-center gap-2 cursor-pointer select-none">
-              {/* Added text-primary to the dot for branding */}
-              <p className="font-extrabold text-lg tracking-tight">
+              <p
+                className={`font-extrabold text-lg tracking-tight transition-colors duration-500 ${
+                  isLightMode ? "text-p-grey-dark" : "text-p-cream"
+                }`}
+              >
                 printerQ<span className="text-primary">.</span>
               </p>
             </div>
+            </a>
 
-            <div className="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide text-white/80">
-              <a href="#home" className="hover:text-white transition-colors">
-                Home
+            {/* LINKS */}
+            <div
+              className={`hidden md:flex items-center gap-8 font-bold text-sm tracking-wide transition-colors duration-500 ${
+                isLightMode ? "text-p-grey-dark/80" : "text-p-cream/80"
+              }`}
+            >
+              <a
+                href="#details"
+                className={`hover:opacity-100 transition-opacity ${
+                  isLightMode ? "hover:text-p-grey-dark" : "hover:text-p-cream"
+                }`}
+              >
+                Details
               </a>
-              <a href="#docs" className="hover:text-white transition-colors">
-                Docs
+              <a
+                href="#features "
+                className={`hover:opacity-100 transition-opacity ${
+                  isLightMode ? "hover:text-p-grey-dark" : "hover:text-p-cream"
+                }`}
+              >
+                Features
+              </a>
+              <a
+                href="#printer"
+                className={`hover:opacity-100 transition-opacity ${
+                  isLightMode ? "hover:text-p-grey-dark" : "hover:text-p-cream"
+                }`}
+              >
+                Printer
+              </a>
+              <a
+                href="#about"
+                className={`hover:opacity-100 transition-opacity ${
+                  isLightMode ? "hover:text-p-grey-dark" : "hover:text-p-cream"
+                }`}
+              >
+                About
               </a>
             </div>
           </div>
         </GlassSurface>
       </div>
 
-      {/* --- 2. SEPARATE GLASS BUTTON (Accented Style) --- */}
-      {/* UPDATED: Changed shadow to primary color for a blue glow */}
-      <div className="pointer-events-auto rounded-full shadow-2xl shadow-primary/40 transition-transform hover:scale-105 active:scale-90 cursor-pointer">
+      {/* --- 2. DYNAMIC THEMED BUTTON --- */}
+      <div
+        className={`pointer-events-auto rounded-full shadow-2xl transition-all duration-500 ease-in-out cursor-pointer overflow-hidden
+          ${
+            showNavButton
+              ? "opacity-100 translate-x-0 w-[140px]"
+              : "opacity-0 translate-x-10 w-0"
+          }
+          
+          /* DYNAMIC SHADOW: Blue Glow in Dark Mode, Subtle Dark Shadow in Light Mode */
+          ${isLightMode ? "shadow-black/20" : "shadow-primary/40"}
+        `}
+      >
         <GlassSurface
           width={btnWidth}
           height={navHeight}
@@ -84,12 +161,20 @@ const GlassNavbar = () => {
           brightness={0.3}
           opacity={1}
           mixBlendMode="normal"
-          // UPDATED: Changed border to use your primary brand color (at 50% opacity)
-          className="border border-p rounded-full"
+          /* DYNAMIC BORDER: Primary Blue in Dark Mode, Dark Grey in Light Mode */
+          className={`transition-colors duration-500 border-2 rounded-full hover:scale-105 ${
+            isLightMode ? "border-p" : "border-p"
+          }`}
         >
           <button
-            // Added text-primary-light for a subtle blue tint to the text too
-            className="w-full h-full flex items-center justify-center text-p-cream font-bold text-md tracking-widest"
+            /* DYNAMIC TEXT: Cream in Dark Mode, Dark Grey in Light Mode */
+            className={`w-full h-full flex items-center justify-center font-extrabold text-md tracking-widest whitespace-nowrap transition-colors duration-500
+              ${
+                isLightMode
+                  ? "bg-transparent text-p-grey-dark"
+                  : "bg-transparent text-p-cream"
+              }
+            `}
             style={{ width: btnWidth, height: navHeight }}
           >
             Join Waitlist

@@ -3,23 +3,27 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
+  --color-p: #0046ff;
+  --color-p-dark: #001bb7;
+  --color-s: #ff8040;
+  --color-p-cream: #f5f1dc;
 
-  --color-p: #0046FF;
-  --color-p-dark: #001BB7;
-  --color-s: #FF8040;
-  --color-p-cream: #F5F1DC;
+  --color-p-grey: #37353e;
+  --color-p-grey-light: #5d5966;
+  --color-p-grey-dark: #1c1b21;
 
-  --color-p-grey:       #37353E;
-  --color-p-grey-light: #5D5966;
-  --color-p-grey-dark:  #1C1B21;
-
-  --color-text-secondary:       #6E6B7B;
-  --color-text-secondary-dark:  #565360;
-  --color-text-secondary-light: #8F8C9A;
+  --color-text-secondary: #6e6b7b;
+  --color-text-secondary-dark: #565360;
+  --color-text-secondary-light: #8f8c9a;
 }
-
+.text-stroke {
+  -webkit-text-stroke: 2px #e5e7eb; /* Light grey stroke */
+  color: transparent;
+}
+html{
+  scroll-behavior: smooth;
+}
 @theme inline {
-
   --radius-sm: calc(var(--radius) - 4px);
 
   --radius-md: calc(var(--radius) - 2px);
@@ -92,7 +96,6 @@
 }
 
 :root {
-
   --radius: 0.625rem;
 
   --background: oklch(1 0 0);
@@ -159,7 +162,6 @@
 }
 
 .dark {
-
   --background: oklch(0.145 0 0);
 
   --foreground: oklch(0.985 0 0);
