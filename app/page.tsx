@@ -5,6 +5,7 @@ import HowItWorks from "./components/HowItWorks";
 import { useEffect } from "react";
 import Features from "./components/Features";
 import PrinterSection from "./components/PrinterSection";
+import Footer from "./components/Footer";
 
 export default function Home() {
   useEffect(() => {
@@ -32,6 +33,9 @@ export default function Home() {
 
       <section id="printer" data-theme="dark">
         <PrinterSection />
+      </section>
+      <section id="about">
+      <Footer/>
       </section>
     </main>
   );

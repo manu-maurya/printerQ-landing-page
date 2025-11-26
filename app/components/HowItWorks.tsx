@@ -58,8 +58,8 @@ const HowItWorks = () => {
             <span className="text-s">Minutes</span>
           </h3>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Forget finding a cyber café or a printer shop. We bring the printer to your doorstep
-            using our decentralized mobile fleet.
+            We bridged the gap between your device and the local Xerox shop. 
+            It's as easy as ordering a pizza.
           </p>
         </div>
 
