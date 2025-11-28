@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-const iphoneMockupImg = "/path/to/your/iphone-qr-mockup.png";
+// const iphoneMockupImg = "/path/to/your/iphone-qr-mockup.png";
 
 const PrinterSection = () => {
   return (
@@ -46,7 +46,7 @@ const PrinterSection = () => {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-white/20 rounded-full blur-3xl -z-10"></div>
 
               <img
-                src={iphoneMockupImg}
+                // src={iphoneMockupImg}
                 alt="iPhone"
                 className="w-[280px] md:w-[320px] drop-shadow-2xl relative z-10 rotate-[-5deg] hover:rotate-0 transition-transform duration-500"
               />
