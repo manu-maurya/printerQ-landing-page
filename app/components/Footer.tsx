@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link"; // Import Next.js Link
 
 const Footer = () => {
   return (
@@ -23,82 +24,110 @@ const Footer = () => {
 
           {/* Navigation Links */}
           <div className="flex flex-wrap gap-8 md:gap-16">
+            
+            {/* PRINTERS COLUMN */}
             <div className="flex flex-col gap-4">
-              <h4 className="text-sm font-bold  uppercase tracking-widest ">
+              <h4 className="text-sm font-bold uppercase tracking-widest">
                 For Printers
               </h4>
-              <a
-                href="#"
-                className="hover:text-p opacity-80  transition-colors text-lg font-medium"
+              <Link
+                href="/printers/partner"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-p opacity-80 transition-colors text-lg font-medium"
               >
                 Partner With Us
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="/printers/apps"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-p opacity-80 transition-colors text-lg font-medium"
               >
                 Apps For You
-              </a>
+              </Link>
             </div>
+
+            {/* DELIVERY COLUMN */}
             <div className="flex flex-col gap-4">
-              <h4 className="text-sm font-bold  uppercase tracking-widest">
+              <h4 className="text-sm font-bold uppercase tracking-widest">
                 For Delivery Partner
               </h4>
-              <a
-                href="#"
+              <Link
+                href="/delivery/partners"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-p opacity-80 transition-colors text-lg font-medium"
               >
                 Partner With Us
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="/delivery/app"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-p opacity-80 transition-colors text-lg font-medium"
               >
                 Apps For You
-              </a>
+              </Link>
             </div>
+
+            {/* SOCIALS COLUMN */}
             <div className="flex flex-col gap-4">
-              <h4 className="text-sm font-bold  uppercase tracking-widest">
+              <h4 className="text-sm font-bold uppercase tracking-widest">
                 Socials
               </h4>
               <a
-                href="#"
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-p opacity-80 transition-colors text-lg font-medium"
               >
                 Twitter
               </a>
               <a
-                href="#"
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-p opacity-80 transition-colors text-lg font-medium"
               >
                 LinkedIn
               </a>
               <a
-                href="#"
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-p opacity-80 transition-colors text-lg font-medium"
               >
                 Instagram
               </a>
             </div>
+
+            {/* LEGAL COLUMN */}
             <div className="flex flex-col gap-4">
-              <h4 className="text-sm font-bold  uppercase tracking-widest">
+              <h4 className="text-sm font-bold uppercase tracking-widest">
                 Legal
               </h4>
-              <a
-                href="#"
+              <Link
+                href="/legal/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-p opacity-80 transition-colors text-lg font-medium"
               >
                 Privacy
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="/legal/terms"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-p opacity-80 transition-colors text-lg font-medium"
               >
                 Terms
-              </a>
+              </Link>
             </div>
           </div>
         </div>
+        
+        {/* BIG TEXT BG */}
         <div className="w-full flex justify-center items-end leading-[0.8] select-none pointer-events-none overflow-hidden">
           <h1 className="text-[22vw] font-black tracking-tighter translate-y-4 md:translate-y-8 bg-linear-to-b from-p-cream to-transparent bg-clip-text text-transparent pr-[1vw]">
             printerQ

@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import Features from "./components/Features";
 import PrinterSection from "./components/PrinterSection";
 import Footer from "./components/Footer";
+import Link from "next/link";
 
 export default function Home() {
   useEffect(() => {

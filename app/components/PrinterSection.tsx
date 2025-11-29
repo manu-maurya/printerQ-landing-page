@@ -107,7 +107,6 @@ const PrinterSection = () => {
       {/* --- PART 2: WAITLIST FORM --- */}
       {/* FIX 1: Removed padding from this wrapper section so it sits flush */}
       <section id="waitlist" className="relative w-full">
-        
         {/* FIX 2: Adjusted padding here to be consistent (py-16 md:py-24) */}
         <div className="relative py-16 md:py-24 bg-p-grey">
           <div className="absolute top-0 left-0 w-full h-24 bg-linear-to-b from-p-grey-dark to-transparent"></div>
@@ -135,6 +134,7 @@ const PrinterSection = () => {
                         Name
                       </label>
                       <input
+                        suppressHydrationWarning
                         required
                         type="text"
                         id="name"
@@ -152,6 +152,7 @@ const PrinterSection = () => {
                         Email
                       </label>
                       <input
+                        suppressHydrationWarning
                         required
                         type="email"
                         id="email"
@@ -179,6 +180,7 @@ const PrinterSection = () => {
                         )}
                       </div>
                       <input
+                        suppressHydrationWarning
                         required
                         type="text"
                         id="location"
