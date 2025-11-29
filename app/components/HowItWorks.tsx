@@ -30,7 +30,7 @@ const HowItWorks = () => {
   return (
     <section
       id="how-it-works"
-      className="relative py-12 md:py-24 bg-p-cream scroll-mt-24 overflow-hidden"
+      className="relative py-12 md:py-24 bg-p-cream scroll-mt-24 overflow-hidden rounded-t-4xl md:rounded-none"
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}

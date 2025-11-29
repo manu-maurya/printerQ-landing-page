@@ -68,7 +68,7 @@ const PrinterSection = () => {
     <section
       id="printer-join"
       // Parent has no bottom padding (pb-0)
-      className="relative pt-12 md:pt-24 pb-0 bg-p-grey-dark md:mt-32"
+      className="relative pt-12 md:pt-24 pb-0 bg-p-grey-dark md:mt-32 rounded-t-4xl md:rounded-none"
     >
       {/* Background Curve */}
       <div
@@ -121,7 +121,7 @@ const PrinterSection = () => {
               </p>
             </div>
 
-            <div className="bg-p-grey-dark/50 backdrop-blur-sm border border-white/5 rounded-3xl p-6 md:p-12 shadow-2xl">
+            <div className="bg-p-grey-dark/50 backdrop-blur-sm border border-white/5 rounded-4xl p-6 md:p-12 shadow-2xl">
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-2 gap-6">
