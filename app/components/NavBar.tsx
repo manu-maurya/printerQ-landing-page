@@ -163,7 +163,7 @@ const NavBar = () => {
                 - No dynamic theme variables here 
              */}
              <button
-               className="bg-p text-p-cream rounded-full font-bold text-sm tracking-widest uppercase flex items-center justify-center transition-colors duration-300"
+               className="bg-linear-to-br from-p to-p-dark text-p-cream rounded-full font-bold text-sm tracking-widest flex items-center justify-center transition-colors duration-300"
                style={{ width: mobileBtnWidth, height: mobileBtnHeight }}
              >
                Join Waitlist
