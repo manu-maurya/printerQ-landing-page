@@ -19,11 +19,13 @@ const Footer = () => {
 
         {/* Links */}
         <div className="flex gap-8 text-sm font-bold opacity-70">
-          <a href="#" className="hover:text-p hover:opacity-100 transition-colors">Twitter</a>
-          <a href="#" className="hover:text-p hover:opacity-100 transition-colors">LinkedIn</a>
-          <a href="#" className="hover:text-p hover:opacity-100 transition-colors">Email</a>
+          <a href="" className="hover:text-p hover:opacity-100 transition-colors">Twitter</a>
+          <a href="" className="hover:text-p hover:opacity-100 transition-colors">LinkedIn</a>
+          <a href="" className="hover:text-p hover:opacity-100 transition-colors">Email</a>
         </div>
+
       </div>
+      <div className="text-8xl">printerQ</div>
     </footer>
     </section>
   );
