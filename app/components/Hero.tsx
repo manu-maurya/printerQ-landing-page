@@ -6,13 +6,13 @@ import HeroFloatingElements from "./HeroFloatingElements";
 const Hero = () => {
   return (
     // 1. 'relative' allows us to position children absolutely inside this container
-    <div className="relative flex items-center justify-center bg-p-grey-dark h-screen w-full">
-      <HeroFloatingElements/>
+    <div className="relative flex items-center justify-center bg-p-grey-dark h-screen w-full ">
+      {/* <HeroFloatingElements/> */}
       {/* Middle Content */}
       <section className="z-10 text-center px-4">
         <div className="max-w-3xl mx-auto">
           <ComingSoonBadge/>
-          <h1 className="lg:text-8xl md:text-7xl text-6xl font-extrabold text-p-cream mb-4">
+          <h1 className="lg:text-8xl md:text-7xl text-8xl font-extrabold text-p-cream mb-4">
             printerQ
           </h1>
           <h1 className="lg:text-6xl md:text-5xl text-4xl font-extrabold bg-linear-to-r from-p-cream to-text-secondary-light bg-clip-text text-transparent mb-4">

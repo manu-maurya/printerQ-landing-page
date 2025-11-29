@@ -30,30 +30,18 @@ const HowItWorks = () => {
   return (
     <section
       id="how-it-works"
-      // 1. bg-[#F5F1DC]: Matches the 'Light Mode' logic of your Navbar
-      // 2. py-32: Huge top padding ensures visual separation from Hero
-      // 3. scroll-mt-32: CRITICAL. Prevents Navbar from covering the title when scrolling via links
-      className="relative py-32 bg-p-cream scroll-mt-32 overflow-hidden"
+      className="relative py-12 md:py-24 bg-p-cream scroll-mt-24 overflow-hidden"
     >
-      {/* Background Pattern (Subtle Engineering Grid) */}
-      <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(#000 1px, transparent 1px)",
-          backgroundSize: "32px 32px",
-        }}
-      ></div>
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-24">
-          <h1 className="text-7xl md:text-8xl lg:9xl font-extrabold text-p mb-6">
+          <h1 className="text-5xl md:text-8xl lg:9xl font-extrabold text-p mb-6">
             How printerQ Works
           </h1>
           <h2 className="text-p-grey font-bold tracking-widest uppercase text-xs mb-4">
             The Process
           </h2>
-          <h3 className="text-4xl md:text-5xl font-extrabold text-p-grey mb-6">
+          <h3 className="text-3xl md:text-5xl font-extrabold text-p-grey mb-6">
             From Screen to Paper in{" "}
             <span className="text-s">Minutes</span>
           </h3>
@@ -64,10 +52,10 @@ const HowItWorks = () => {
         </div>
 
         {/* Steps Grid */}
-        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="relative grid grid-cols-3 md:grid-cols-3 gap-12">
           {/* Connecting Line (Desktop Only) */}
           {/* This sits behind the cards to connect them */}
-          <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-p-grey-dark/10 -z-10 rounded-full"></div>
+          <div className="block absolute top-12 left-[16%] right-[16%] h-0.5 bg-p-grey-dark/10 -z-10 rounded-full"></div>
 
           {steps.map((step) => (
             <div
@@ -89,11 +77,11 @@ const HowItWorks = () => {
               </div>
 
               {/* Card Content */}
-              <div className="bg-white/60 backdrop-blur-sm p-8 rounded-3xl border border-white/50 shadow-sm hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 w-full relative z-10">
-                <h4 className="text-xl font-bold text-p-grey-dark mb-3">
+              <div className="bg-white/60 backdrop-blur-sm p-4 md:p-8 rounded-3xl border border-white/50 shadow-sm hover:shadow-xl hover:shadow-p/10 transition-all duration-300 w-full relative z-10">
+                <h4 className="text-sm md:text-xl font-bold text-p-grey-dark mb-2">
                   {step.title}
                 </h4>
-                <p className="text-gray-600 leading-relaxed text-sm">
+                <p className="text-gray-600 leading-relaxed md:flex text-sm hidden">
                   {step.desc}
                 </p>
               </div>

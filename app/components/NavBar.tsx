@@ -60,7 +60,7 @@ const NavBar = () => {
 
   // --- DESKTOP THEME COLORS (Dynamic) ---
   const desktopText = isLightMode ? "text-p-grey-dark" : "text-p-cream";
-  const desktopBorder = isLightMode ? "border-p-grey-dark/10" : "border-p-cream/10";
+  const desktopBorder = isLightMode ? "border-p-grey-dark/30" : "border-p-cream/30";
   const desktopBtnBorder = isLightMode ? "border-p" : "border-p";
 
   return (
@@ -76,13 +76,17 @@ const NavBar = () => {
             width={finalNavWidth}
             height={navHeight}
             borderRadius={50}
-            displace={10}
-            distortionScale={-50}
-            redOffset={1}
+            backgroundOpacity={0.1}
+            saturation={1}
+            blur={11}
+            borderWidth={0.07}
+            displace={0.5}
+            distortionScale={-180}
+            redOffset={0}
             greenOffset={1}
-            blueOffset={5}
+            blueOffset={2}
             brightness={isLightMode ? 0.6 : 0.3}
-            opacity={1}
+            opacity={0.93}
             mixBlendMode="normal"
             className={`transition-colors duration-300 border rounded-full ${desktopBorder}`}
           >
@@ -120,11 +124,15 @@ const NavBar = () => {
             width={desktopBtnWidth}
             height={navHeight}
             borderRadius={50}
-            displace={10}
-            distortionScale={-50}
-            redOffset={1}
+            backgroundOpacity={0.1}
+            saturation={1}
+            blur={11}
+            borderWidth={0.07}
+            displace={0.5}
+            distortionScale={-180}
+            redOffset={0}
             greenOffset={1}
-            blueOffset={5}
+            blueOffset={2}
             brightness={isLightMode ? 0.6 : 0.3}
             opacity={1}
             className={`transition-colors duration-300 border-2 rounded-full cursor-pointer ${desktopBtnBorder}`}
@@ -148,14 +156,14 @@ const NavBar = () => {
         `}
       >
         {/* MOBILE BUTTON (STATIC THEME) */}
-        <div className="pointer-events-auto shadow-2xl shadow-p/40 rounded-full overflow-hidden">
+        <div className="pointer-events-auto rounded-full overflow-hidden">
              {/* UPDATED: 
                 - bg-p (Primary color)
                 - text-white (Always white text)
                 - No dynamic theme variables here 
              */}
              <button
-               className="bg-p text-p-cream hover:bg-p-dark rounded-full font-bold text-sm tracking-widest uppercase flex items-center justify-center transition-colors duration-300"
+               className="bg-p text-p-cream rounded-full font-bold text-sm tracking-widest uppercase flex items-center justify-center transition-colors duration-300"
                style={{ width: mobileBtnWidth, height: mobileBtnHeight }}
              >
                Join Waitlist
