@@ -3,30 +3,108 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <section id="#about">
-    <footer className="w-full bg-black text-p-cream py-12 border-t border-white/10" data-theme="dark">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-        
-        {/* Brand */}
-        <div className="text-center md:text-left">
-          <p className="font-extrabold text-2xl tracking-tight">
+    <section id="about" data-theme="dark">
+      <footer className="w-full bg-black text-p-cream relative overflow-hidden flex flex-col justify-between pt-20 border-t border-white/10">
+        {/* --- 1. TOP SECTION (Content) --- */}
+        <div className="w-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-12 md:gap-6 mb-20 md:mb-32 z-10 relative">
+          {/* Brand & Copyright */}
+          <div className="flex flex-col gap-4 md:gap-8">
+            <div>
+              <p className="font-extrabold text-2xl tracking-tight">printerQ</p>
+              <p className="text-sm opacity-50 mt-2 max-w-xs leading-relaxed">
+                Reinventing the way you print. <br />
+                From anywhere, to everywhere.
+              </p>
+            </div>
+            <p className="text-xs opacity-30 mt-auto">
+              © 2025 PrinterQ Technologies Pvt Ltd.
+            </p>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="flex flex-wrap gap-8 md:gap-16">
+            <div className="flex flex-col gap-4">
+              <h4 className="text-sm font-bold  uppercase tracking-widest ">
+                For Printers
+              </h4>
+              <a
+                href="#"
+                className="hover:text-p opacity-80  transition-colors text-lg font-medium"
+              >
+                Partner With Us
+              </a>
+              <a
+                href="#"
+                className="hover:text-p opacity-80 transition-colors text-lg font-medium"
+              >
+                Apps For You
+              </a>
+            </div>
+            <div className="flex flex-col gap-4">
+              <h4 className="text-sm font-bold  uppercase tracking-widest">
+                For Delivery Partner
+              </h4>
+              <a
+                href="#"
+                className="hover:text-p opacity-80 transition-colors text-lg font-medium"
+              >
+                Partner With Us
+              </a>
+              <a
+                href="#"
+                className="hover:text-p opacity-80 transition-colors text-lg font-medium"
+              >
+                Apps For You
+              </a>
+            </div>
+            <div className="flex flex-col gap-4">
+              <h4 className="text-sm font-bold  uppercase tracking-widest">
+                Socials
+              </h4>
+              <a
+                href="#"
+                className="hover:text-p opacity-80 transition-colors text-lg font-medium"
+              >
+                Twitter
+              </a>
+              <a
+                href="#"
+                className="hover:text-p opacity-80 transition-colors text-lg font-medium"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="#"
+                className="hover:text-p opacity-80 transition-colors text-lg font-medium"
+              >
+                Instagram
+              </a>
+            </div>
+            <div className="flex flex-col gap-4">
+              <h4 className="text-sm font-bold  uppercase tracking-widest">
+                Legal
+              </h4>
+              <a
+                href="#"
+                className="hover:text-p opacity-80 transition-colors text-lg font-medium"
+              >
+                Privacy
+              </a>
+              <a
+                href="#"
+                className="hover:text-p opacity-80 transition-colors text-lg font-medium"
+              >
+                Terms
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="w-full flex justify-center items-end leading-[0.8] select-none pointer-events-none overflow-hidden">
+          <h1 className="text-[22vw] font-black tracking-tighter translate-y-4 md:translate-y-8 bg-linear-to-b from-p-cream to-transparent bg-clip-text text-transparent">
             printerQ
-          </p>
-          <p className="text-sm opacity-50 mt-2">
-            © 2025 PrinterQ Technologies Pvt Ltd.
-          </p>
+          </h1>
         </div>
-
-        {/* Links */}
-        <div className="flex gap-8 text-sm font-bold opacity-70">
-          <a href="" className="hover:text-p hover:opacity-100 transition-colors">Twitter</a>
-          <a href="" className="hover:text-p hover:opacity-100 transition-colors">LinkedIn</a>
-          <a href="" className="hover:text-p hover:opacity-100 transition-colors">Email</a>
-        </div>
-
-      </div>
-      <div className="text-8xl">printerQ</div>
-    </footer>
+      </footer>
     </section>
   );
 };

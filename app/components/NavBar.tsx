@@ -17,16 +17,14 @@ const NavBar = () => {
       // 1. Visibility Logic
       setShowNavButton(window.scrollY > heroHeight * 0.8);
 
-      // 2. Theme Logic
+      // 2. Theme Logic (For Desktop Only)
       const sections = document.querySelectorAll("[data-theme]");
-      let foundSection = false;
-
+      
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
         if (rect.top <= triggerPoint && rect.bottom >= triggerPoint) {
           const theme = section.getAttribute("data-theme");
           setIsLightMode(theme === "light");
-          foundSection = true;
         }
       });
     };
@@ -42,11 +40,9 @@ const NavBar = () => {
     };
   }, []);
 
-  // --- DIMENSIONS & CONSTANTS ---
+  // --- DIMENSIONS ---
   const navHeight = 60; 
   const desktopBtnWidth = 140;
-  
-  // Mobile specific dimensions
   const mobileBtnHeight = 48; 
   const mobileBtnWidth = 150;
 
@@ -62,15 +58,10 @@ const NavBar = () => {
 
   if (windowWidth === 0) return null;
 
-  // --- DESKTOP THEME (Glassy & Elegant) ---
+  // --- DESKTOP THEME COLORS (Dynamic) ---
   const desktopText = isLightMode ? "text-p-grey-dark" : "text-p-cream";
   const desktopBorder = isLightMode ? "border-p-grey-dark/10" : "border-p-cream/10";
   const desktopBtnBorder = isLightMode ? "border-p" : "border-p";
-
-  // --- MOBILE THEME (Bold & Visible) ---
-  // You can make this completely different. Here I used a solid background style.
-  const mobileBg = isLightMode ? "bg-p-grey-dark" : "bg-p-cream";
-  const mobileText = isLightMode ? "text-p-cream" : "text-p-grey-dark";
 
   return (
     <>
@@ -117,7 +108,7 @@ const NavBar = () => {
           </GlassSurface>
         </div>
 
-        {/* Desktop Button */}
+        {/* Desktop Button (Dynamic Theme) */}
         <div
           className={`pointer-events-auto rounded-full shadow-2xl transition-all duration-500 ease-in-out cursor-pointer overflow-hidden 
             ${showNavButton ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10 w-0"}
@@ -129,6 +120,11 @@ const NavBar = () => {
             width={desktopBtnWidth}
             height={navHeight}
             borderRadius={50}
+            displace={10}
+            distortionScale={-50}
+            redOffset={1}
+            greenOffset={1}
+            blueOffset={5}
             brightness={isLightMode ? 0.6 : 0.3}
             opacity={1}
             className={`transition-colors duration-300 border-2 rounded-full cursor-pointer ${desktopBtnBorder}`}
@@ -147,20 +143,19 @@ const NavBar = () => {
       {/* 2. MOBILE VIEW (Hidden on Desktop)      */}
       {/* ======================================= */}
       <div 
-        // Fixed at BOTTOM-6
         className={`md:hidden fixed bottom-6 left-0 right-0 z-50 flex justify-center items-center pointer-events-none transition-all duration-500
           ${showNavButton ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}
         `}
       >
-        {/* MOBILE BUTTON: 
-           - Smaller Size (48px height)
-           - Solid Background Color (No Glass) to distinguish it
-           - Different Shadow
-        */}
-        <div className="pointer-events-auto shadow-2xl shadow-black/40 rounded-full overflow-hidden ">
-             {/* Note: I removed GlassSurface here to show a completely 'different theme' */}
+        {/* MOBILE BUTTON (STATIC THEME) */}
+        <div className="pointer-events-auto shadow-2xl shadow-p/40 rounded-full overflow-hidden">
+             {/* UPDATED: 
+                - bg-p (Primary color)
+                - text-white (Always white text)
+                - No dynamic theme variables here 
+             */}
              <button
-               className={`rounded-full font-bold text-sm tracking-widest uppercase flex items-center justify-center transition-colors duration-300 ${mobileBg} ${mobileText}`}
+               className="bg-p text-p-cream hover:bg-p-dark rounded-full font-bold text-sm tracking-widest uppercase flex items-center justify-center transition-colors duration-300"
                style={{ width: mobileBtnWidth, height: mobileBtnHeight }}
              >
                Join Waitlist
