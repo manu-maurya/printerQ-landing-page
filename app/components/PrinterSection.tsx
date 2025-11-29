@@ -8,13 +8,13 @@ const PrinterSection = () => {
     <section
       id="printer-join"
       // 1. REMOVED 'overflow-hidden' from here so the top curve isn't cut off
-      className="relative py-32 bg-p-grey-dark mt-32"
+      className="relative py-12 md:py-24 bg-p-grey-dark md:mt-32 "
     >
       {/* --- THE FIX --- */}
       {/* We create a wrapper that is positioned UP (-top-48), 
           but strictly limits width (overflow-hidden). 
           This contains the wide curve inside it. */}
-      <div className="absolute -top-24 md:-top-48 left-0 right-0 h-24 md:h-48 overflow-hidden pointer-events-none z-0" data-theme="dark">
+      <div className=" hidden md:flex absolute -top-21 md:-top-48 left-0 right-0 h-24 md:h-48 overflow-hidden pointer-events-none z-0" data-theme="dark">
         {/* The Curve itself (Scaled wide) */}
         <div
           className="w-full h-full bg-p-grey-dark rounded-t-[100%]"
@@ -26,8 +26,8 @@ const PrinterSection = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* --- MAIN CONTENT RECTANGLE --- */}
-        <div className="bg-linear-to-bl from-p to-p-dark rounded-[3rem] p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl shadow-p/20">
-          <div className="flex-1 text-center md:text-left space-y-8">
+        <div className="bg-linear-to-t from-p/40 to-transparent rounded-[3rem] p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl shadow-p/20 border-4 border-p">
+          <div className="flex-1 text-center md:text-left space-y-8 md:px-15">
             <h2 className="text-4xl md:text-5xl font-extrabold text-p-cream leading-tight">
               Printers, join the network.
             </h2>
@@ -36,12 +36,12 @@ const PrinterSection = () => {
               get verified, and start accepting print jobs from users nearby.
             </p>
 
-            <button className="inline-block px-8 py-4 bg-s text-p-cream font-bold text-lg rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
+            <button className="inline-block px-8 py-4 bg-s text-p-cream font-bold text-lg rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300" >
               Become a Partner
             </button>
           </div>
 
-          <div className="flex-1 flex justify-center md:justify-end relative">
+          <div className="flex-1 md:flex justify-center md:justify-end relative hidden">
             <div className="relative z-10">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-white/20 rounded-full blur-3xl -z-10"></div>
 

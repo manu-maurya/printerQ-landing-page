@@ -4,9 +4,9 @@ import React from "react";
 const Footer = () => {
   return (
     <section id="about" data-theme="dark">
-      <footer className="w-full bg-black text-p-cream relative overflow-hidden flex flex-col justify-between pt-20 border-t border-white/10">
+      <footer className="px-5 w-full bg-black text-p-cream relative overflow-hidden flex flex-col justify-between pt-10 md:pt-20 ">
         {/* --- 1. TOP SECTION (Content) --- */}
-        <div className="w-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-12 md:gap-6 mb-20 md:mb-32 z-10 relative">
+        <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 md:gap-6 mb-20 md:mb-32 z-10 relative">
           {/* Brand & Copyright */}
           <div className="flex flex-col gap-4 md:gap-8">
             <div>
@@ -100,7 +100,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-full flex justify-center items-end leading-[0.8] select-none pointer-events-none overflow-hidden">
-          <h1 className="text-[22vw] font-black tracking-tighter translate-y-4 md:translate-y-8 bg-linear-to-b from-p-cream to-transparent bg-clip-text text-transparent">
+          <h1 className="text-[22vw] font-black tracking-tighter translate-y-4 md:translate-y-8 bg-linear-to-b from-p-cream to-transparent bg-clip-text text-transparent pr-[1vw]">
             printerQ
           </h1>
         </div>

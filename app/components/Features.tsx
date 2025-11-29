@@ -4,7 +4,7 @@ import GlassSurface from "../../components/GlassSurface";
 
 const Features = () => {
   return (
-    <div className="w-full py-32 bg-p-cream text-p-grey-dark relative">
+    <div className="w-full py-12 md:py-24 bg-linear-to-t from-p-cream to-s/90 text-p-grey-dark relative">
       <div className="max-w-7xl mx-auto px-6">
         
         <h2 className="text-4xl font-extrabold mb-16 tracking-tight">
@@ -12,7 +12,7 @@ const Features = () => {
         </h2>
 
         {/* BENTO GRID LAYOUT */}
-        <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 h-auto md:h-[600px]">
+        <div className="grid grid-cols md:grid-cols-3 grid-rows-2 gap-6 h-auto md:h-[600px]">
           
           {/* CARD 1: LARGE DARK CARD (Triggers Navbar Switch) */}
           <div 
