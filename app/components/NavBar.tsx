@@ -7,6 +7,12 @@ const NavBar = () => {
   const [showNavButton, setShowNavButton] = useState(false);
   const [isLightMode, setIsLightMode] = useState(false);
 
+  const scrollToWaitlist = () => {
+    const element = document.getElementById("waitlist");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   useEffect(() => {
     setWindowWidth(window.innerWidth);
 
@@ -140,6 +146,7 @@ const NavBar = () => {
             <button
               className={`w-full h-full flex items-center justify-center font-extrabold text-md tracking-widest whitespace-nowrap transition-colors duration-300 ${desktopText}`}
               style={{ width: desktopBtnWidth, height: navHeight }}
+              onClick={scrollToWaitlist}
             >
               Join Waitlist
             </button>
@@ -165,6 +172,7 @@ const NavBar = () => {
              <button
                className="bg-linear-to-br from-p to-p-dark text-p-cream rounded-full font-bold text-sm tracking-widest flex items-center justify-center transition-colors duration-300"
                style={{ width: mobileBtnWidth, height: mobileBtnHeight }}
+               onClick={scrollToWaitlist}
              >
                Join Waitlist
              </button>
