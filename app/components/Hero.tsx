@@ -14,7 +14,7 @@ const Hero = () => {
 
   return (
     // 1. 'relative' allows us to position children absolutely inside this container
-    <div className="relative flex items-center justify-center bg-p-grey-dark h-screen w-full ">
+    <div className="relative flex items-center justify-center bg-p-grey-dark h-screen w-full md:rounded-br-4xl md:rounded-bl-4xl">
       {/* <HeroFloatingElements/> */}
       
       {/* Middle Content */}
