@@ -41,7 +41,7 @@ const HeroFloatingElements = () => {
       {/* 4. Bottom Right: The Printer or Delivery Bike */}
       <div className="absolute bottom-[25%] right-[5%] md:right-[10%] animate-float-slow">
         {/* Replace with <img src="/assets/3d-printer.png" /> */}
-        <div className="bg-linear-to-br from-p-dark to-black p-6 rounded-3xl border border-p-cream/20 shadow-2xl rotate-[-12deg]">
+        <div className="bg-linear-to-br from-p-dark to-black p-6 rounded-3xl border border-p-cream/20 shadow-2xl -rotate-12">
             <Printer size={64} className="text-p-cream" />
         </div>
       </div>
