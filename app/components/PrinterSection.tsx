@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { MapPin, CheckCircle, Loader2 } from "lucide-react";
+import Link from "next/link"; // Import Link
 
 const PrinterSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -67,8 +68,7 @@ const PrinterSection = () => {
   return (
     <section
       id="printer-join"
-      // Parent has no bottom padding (pb-0)
-      className="relative pt-12 md:pt-24 pb-0 bg-p-grey-dark md:mt-32 rounded-t-4xl md:rounded-none"
+      className="relative pt-12 md:pt-24 pb-0 bg-p-grey-dark md:mt-32 rounded-t-[3rem] md:rounded-none"
     >
       {/* Background Curve */}
       <div
@@ -92,9 +92,16 @@ const PrinterSection = () => {
               Turn your underutilized printer into a revenue stream. Sign up,
               get verified, and start accepting print jobs from users nearby.
             </p>
-            <button className="inline-block px-8 py-4 bg-s text-p-cream font-bold text-lg rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300">
-              Become a Partner
-            </button>
+            
+            <Link href="/printers/partner"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+              <button className="inline-block px-8 py-4 bg-s text-p-cream font-bold text-lg rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer">
+                Become a Partner
+              </button>
+            </Link>
+
           </div>
           <div className="flex-1 md:flex justify-center md:justify-end relative hidden">
             <div className="w-[300px] h-[300px] border border-white/10 rounded-xl flex items-center justify-center text-white/20">
@@ -105,9 +112,7 @@ const PrinterSection = () => {
       </div>
 
       {/* --- PART 2: WAITLIST FORM --- */}
-      {/* FIX 1: Removed padding from this wrapper section so it sits flush */}
       <section id="waitlist" className="relative w-full">
-        {/* FIX 2: Adjusted padding here to be consistent (py-16 md:py-24) */}
         <div className="relative py-16 md:py-24 bg-p-grey">
           <div className="absolute top-0 left-0 w-full h-24 bg-linear-to-b from-p-grey-dark to-transparent"></div>
 
@@ -121,7 +126,7 @@ const PrinterSection = () => {
               </p>
             </div>
 
-            <div className="bg-p-grey-dark/50 backdrop-blur-sm border border-white/5 rounded-4xl p-6 md:p-12 shadow-2xl">
+            <div className="bg-p-grey-dark/50 backdrop-blur-sm border border-white/5 rounded-[3rem] p-6 md:p-12 shadow-2xl">
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-2 gap-6">
@@ -229,6 +234,7 @@ const PrinterSection = () => {
                   </div>
 
                   <button
+                    suppressHydrationWarning
                     type="submit"
                     className="w-full bg-linear-to-r from-p to-p-dark hover:brightness-110 text-white font-bold text-xl py-4 rounded-xl shadow-lg shadow-p/20 transition-all transform active:scale-95 md:mt-4"
                   >

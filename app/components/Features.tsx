@@ -41,10 +41,10 @@ const Features = () => {
           Everything you need.
         </h2>
 
-        <div className="flex flex-col gap-6 h-full">
+        <div className="flex flex-col gap-6 h-full mt-10">
           {/* --- CONTAINER 1: FEATURES BENTO GRID --- */}
           <div
-            className="w-full bg-p-grey-dark rounded-[2.5rem] p-6 md:p-10 relative overflow-hidden shadow-2xl shadow-black/20"
+            className="w-full bg-p-grey-dark rounded-[2.5rem] p-3 md:p-5 relative overflow-hidden shadow-2xl shadow-black/20"
             data-theme="dark"
           >
             <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-p/10 blur-[80px] rounded-full pointer-events-none" />
@@ -57,7 +57,7 @@ const Features = () => {
                 >
                   <div className="flex justify-between items-start">
                     <div
-                      className={`w-12 h-12 rounded-2xl ${item.bg} ${item.text} flex items-center justify-center`}
+                      className={`w-9 h-9 rounded-2xl ${item.bg} ${item.text} flex items-center justify-center`}
                     >
                       {item.icon}
                     </div>
@@ -81,8 +81,8 @@ const Features = () => {
           </div>
 
           {/* --- CONTAINER 2: VISUAL --- */}
-          <div className="w-full bg-white rounded-[2.5rem] p-4 md:p-6 shadow-xl border border-white/40 overflow-hidden group">
-            <div className="relative w-full rounded-4xl overflow-hidden bg-gray-50">
+          <div className="w-full bg-white rounded-[2.5rem] p-4 md:p- shadow-xl border border-white/40 overflow-hidden group">
+            <div className="relative  w-full rounded-4xl overflow-hidden bg-gray-50">
               <img
                 src="/one.png"
                 alt="Delivery Process from Shop to Home"
