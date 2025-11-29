@@ -107,7 +107,7 @@ const PrinterSection = () => {
 
       {/* --- PART 2: WAITLIST FORM --- */}
       {/* This div now sits flush at the bottom of the section */}
-      <div className="relative md:py-12 bg-p-grey">
+      <div className="relative pb-6 md:py-12 bg-p-grey">
         <div className="absolute top-0 left-0 w-full h-24 bg-linear-to-b from-p-grey-dark to-transparent"></div>
 
         <div className="max-w-4xl mx-auto px-6 relative z-10">
