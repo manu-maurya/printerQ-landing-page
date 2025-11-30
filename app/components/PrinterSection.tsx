@@ -89,7 +89,7 @@ const PrinterSection = () => {
               Printers, join the network.
             </h2>
             <p className="text-lg text-p-cream leading-relaxed max-w-lg">
-              Turn your underutilized printer into a revenue stream. Sign up,
+              Turn your printer into a revenue stream. Sign up,
               get verified, and start accepting print jobs from users nearby.
             </p>
             
@@ -105,7 +105,7 @@ const PrinterSection = () => {
           </div>
           <div className="flex-1 md:flex justify-center md:justify-end relative hidden">
             <div className="w-[300px] h-[300px] border border-white/10 rounded-xl flex items-center justify-center text-white/20">
-              Image Placeholder
+              QR code will be uploaded soon!
             </div>
           </div>
         </div>
