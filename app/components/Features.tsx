@@ -41,7 +41,6 @@ const Features = () => {
         </h1>
 
         <div className="flex flex-col gap-4 md:gap-6 h-full mt-10 md:mt-10">
-          {/* --- CONTAINER 1: FEATURES BENTO GRID --- */}
           <div
             className="w-full bg-linear-to-br from-p-grey to-p-grey-light rounded-2xl md:rounded-[2.5rem] p-2 md:p-10 relative overflow-hidden shadow-2xl shadow-black/20 flex flex-col justify-center"
             data-theme="dark"
@@ -52,10 +51,8 @@ const Features = () => {
               {FEATURE_ITEMS.map((item, index) => (
                 <div
                   key={index}
-                  // Added 'min-h-[130px]' to force cards to be taller on mobile
                   className={`bg-p-cream/5 border border-p-cream/5 hover:bg-p-cream/10 transition-all duration-300 rounded-2xl md:rounded-3xl p-4 md:p-6 flex flex-row items-center justify-between gap-3 md:gap-6 group relative overflow-hidden min-h-[100px] md:min-h-0 ${item.gridClass}`}
                 >
-                  {/* Text Container */}
                   <div className="flex-1 min-w-0 flex flex-col justify-center h-full">
                     <h3 className="text-sm md:text-3xl font-bold text-p-cream mb-1 md:mb-2 leading-tight">
                       {item.title}
@@ -64,8 +61,6 @@ const Features = () => {
                       {item.desc}
                     </p>
                   </div>
-
-                  {/* Image Container */}
                   <div className="w-16 h-16 md:w-32 md:h-32 shrink-0 self-center md:self-auto">
                     <img
                       src={item.iconSrc}
@@ -77,9 +72,6 @@ const Features = () => {
               ))}
             </div>
           </div>
-
-          {/* --- CONTAINER 2: VISUAL --- */}
-          {/* Removed margin top, let gap handle spacing. Standard height. */}
           <div className="w-full bg-white rounded-4xl md:rounded-[2.5rem] p-3 md:p-6 shadow-xl border border-white/40 overflow-hidden group shrink-0">
             <div className="relative w-full rounded-2xl md:rounded-4xl overflow-hidden bg-gray-50">
               <img

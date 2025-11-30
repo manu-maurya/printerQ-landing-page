@@ -55,8 +55,8 @@ const NavBar = () => {
   }, []);
   const navHeight = 60; 
   const desktopBtnWidth = 140;
-  const mobileBtnHeight = 48; 
-  const mobileBtnWidth = 150;
+  const mobileBtnHeight = 60; 
+  const mobileBtnWidth = 180;
 
   const gap = 12;
   const widthToSubtract = showNavButton ? desktopBtnWidth + gap + 48 : 48;
@@ -171,9 +171,9 @@ const NavBar = () => {
           ${showNavButton ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}
         `}
       >
-        <div className="pointer-events-auto rounded-full overflow-hidden">
+        <div className="pointer-events-auto rounded-full overflow-hidden shadow-2xl ">
              <button
-               className="bg-linear-to-br from-p to-p-dark text-p-cream rounded-full font-bold text-sm tracking-widest flex items-center justify-center transition-colors duration-300"
+               className="bg-linear-to-br from-p to-p-dark text-p-cream rounded-full font-bold text-lg tracking-widest flex items-center justify-center transition-colors duration-300"
                style={{ width: mobileBtnWidth, height: mobileBtnHeight }}
                onClick={scrollToWaitlist}
              >
