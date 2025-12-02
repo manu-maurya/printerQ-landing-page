@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-screen">
-      <body className={outfit.className}>
+      <body className={`${outfit.className} cursor-default`}>
       {children}
       </body>
     </html>
