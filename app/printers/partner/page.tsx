@@ -1,6 +1,6 @@
 "use client";
 import Footer from "@/app/components/Footer";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   Gift,
@@ -42,6 +42,12 @@ const FAQS = [
   },
 ];
 const Page = () => {
+  useEffect(() => {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
@@ -85,9 +91,11 @@ const Page = () => {
             <button className="px-8 py-4 bg-s hover:bg-s/90 text-white font-bold rounded-full text-lg transition-all hover:scale-105 ">
               Register Your Printer
             </button>
-            <button className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-bold rounded-full text-lg transition-all">
-              How it Works
-            </button>
+            <a href="#how">
+              <button className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-bold rounded-full text-lg transition-all">
+                How it Works
+              </button>
+            </a>
           </div>
         </div>
       </section>
@@ -108,7 +116,8 @@ const Page = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Passive Income</h3>
               <p className="text-gray-600 leading-relaxed max-w-sm">
-                Turn your idle printer into a revenue stream. Accept print jobs from users nearby and get paid weekly.
+                Turn your idle printer into a revenue stream. Accept print jobs
+                from users nearby and get paid weekly.
               </p>
             </div>
 
@@ -119,7 +128,8 @@ const Page = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Hyperlocal Reach</h3>
               <p className="text-gray-600 leading-relaxed max-w-sm">
-                Reach customers within a 1-2km radius who need prints urgently. No marketing needed.
+                Reach customers within a 1-2km radius who need prints urgently.
+                No marketing needed.
               </p>
             </div>
 
@@ -130,13 +140,17 @@ const Page = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Total Flexibility</h3>
               <p className="text-gray-600 leading-relaxed max-w-sm">
-                You are in control. Go online or offline whenever you want. Work on your own terms.
+                You are in control. Go online or offline whenever you want. Work
+                on your own terms.
               </p>
             </div>
           </div>
         </div>
       </section>
-      <section className="py-24 px-6 relative overflow-hidden bg-p-grey-dark rounded-tr-4xl rounded-tl-4xl">
+      <section
+        id="how"
+        className="py-24 px-6 relative overflow-hidden bg-p-grey-dark rounded-tr-4xl rounded-tl-4xl"
+      >
         {/* Decorative Background Element */}
         <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-s/5 rounded-full blur-[100px] -translate-y-1/2 -z-10 pointer-events-none"></div>
 
